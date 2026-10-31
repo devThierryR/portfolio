@@ -61,6 +61,7 @@ function t(key) {
 
 function applyLang() {
   root.lang = lang === 'en' ? 'en' : 'pt-BR';
+  document.getElementById('langBtn').setAttribute('aria-label', lang === 'en' ? 'Mudar para português' : 'Switch to English');
   nodes.forEach((el) => {
     const key = el.dataset.i18n;
     el.textContent = lang === 'en' && EN[key] ? EN[key] : el.dataset.pt;
