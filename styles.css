@@ -384,10 +384,17 @@ svg.stroke { fill: none !important; stroke: currentColor; stroke-width: 1.8; str
   }
   .nav.open { opacity: 1; pointer-events: auto; transform: none; }
   .nav a { padding: 12px 14px; font-size: 16px; }
-  .hero { padding: 100px 16px 80px; min-height: auto; }
-  .hero-photo { width: 190px; }
-  .chip-loc { left: auto; right: -110px; bottom: 30px; }
-  .chip-code { right: -120px; top: 40px; }
+  .hero { padding: 100px 16px 80px; min-height: auto; gap: 28px; }
+  /* No celular a foto vira um cabeçalho de perfil: foto à esquerda, chips empilhados ao lado. */
+  .hero-photo {
+    width: 100%; display: grid; grid-template-columns: 104px 1fr;
+    align-items: center; column-gap: 16px; row-gap: 8px;
+  }
+  .photo-frame { grid-row: span 2; border-radius: 26px; padding: 4px; box-shadow: 0 16px 40px -18px var(--accent); }
+  .photo-frame img { border-radius: 22px; }
+  .chip { position: static; justify-self: start; animation: none; box-shadow: none; }
+  .chip-code { order: 1; align-self: end; }
+  .chip-loc { order: 2; align-self: start; }
   .statusbar { left: 16px; right: 16px; gap: 16px; }
   .hide-sm { display: none; }
   .section { padding: 80px 16px; }
